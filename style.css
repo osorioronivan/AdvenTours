@@ -4,6 +4,10 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+body{
+  background-color: #f5f5f5;
+  
+}
 .wrapper{
     color: #fff;
     position: absolute;
@@ -22,7 +26,8 @@
     gap: 2rem;
     list-style: none;
   }
-  li {
+  li a {
+    color: #fff;
     text-decoration: none;
   }
   .btn-register{
@@ -62,12 +67,12 @@
   }
   .title{
     color: #fff;
-    font-size:4rem;
+    font-size:3rem;
     font-weight: 500;
   }
   .sub-title{
     color: #fff;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 200;
   }
   .trip-menu{
@@ -108,7 +113,62 @@
     border-radius: 10px;
     font-size: 1rem;
   }
-  .partners{
-    height: 100vh;
-    background-color: #f5f5f5;
+  .top-destination{
+    padding: 1.5rem 10rem;
+  }
+  .destination-title h2{
+    text-align: center;
+    color: #0d1f35;
+    font-size:3rem;
+    font-weight: 500;
+    padding-top: 10rem;
+  }
+  .destination-title p{
+    text-align: center;
+    color: #0d1f35;
+    font-weight: 400;
+
+  }
+  .tourist-spots{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 0px;
+    width: 30%;
+  }
+  .destination-carousel{
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  .Location{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .img-location{
+    border-radius: 30px;
+    width: 30rem;
+    height: 35rem;
+    object-fit:cover;
+  }
+  .location-rate{
+    display: flex;
+    justify-content: space-between;
+  }
+  .location-country{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .ratings{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    width: 20%;
   }
