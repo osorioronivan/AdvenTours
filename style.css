@@ -34,7 +34,7 @@ body{
     background-color:  #43b97f;
     color: #fff;
     border: none;
-    padding: 1rem;
+    padding: .5rem 1rem;
     border-radius: 10px;
   }
   .logo {
@@ -149,11 +149,26 @@ body{
     flex-direction: column;
     width: 100%;
   }
-
+  .location-title{
+    font-weight: 600;
+  }
+  .country{
+    font-weight: 400;
+  }
+  .ratings{
+    gap: 10px;
+  }
+.rate{
+  font-weight: 600;
+}
+.rate span{
+  font-weight: 200;
+}
   .img-location{
+    align-self: center;
     border-radius: 30px;
-    width: 30rem;
-    height: 35rem;
+    width: 100%;
+    height: 40rem;
     object-fit:cover;
   }
   .location-rate{
