@@ -16,7 +16,7 @@
 </head>
 </head>
 
-<body>
+<body>s
   <div class="main-container">
     <header class="wrapper">
       <nav class="navbar">
@@ -108,6 +108,41 @@
       </div>
   </div>
   </main>
+  <div class="modal" id="modal">
+    <div class="close-modal">
+      <button class="btn-modal-close" id = "btn-modal-close" disabled>X</button>
+    </div>
+    <div class="modal-content" id="modal-content" >
+      <h1>We ❤️ Your Data!</h1>
+      <div id="modal-Text">
+          <p>
+            We have a strict policy on tracking and spamming: we'll definitely 
+            track you, and we'll definitely spam you. To use this site, enter your name 
+            and email address and accept our ridiculous terms and conditions.
+          </p>
+      </div>
+
+      <form id="consent-form">
+        <input 
+          type="text" 
+          name="txtName" 
+          id="txtName" 
+          placeholder="Enter your full name"
+          required>
+
+        <input 
+          type="email" 
+          name="txtEmail" 
+          id="txtEmail" 
+          placeholder="Enter your email"
+          required>
+          <div class="modal-controls" id = "modal-controls">
+            <button type="submit" class="modal-btn" id="btnAccept">Accept</button>
+            <button class="modal-btn" id ="btnDecline">Decline</button>
+          </div>
+      </form>		
+    </div>
+  </div>
   <footer></footer>
   </div>
 <script src="index.js"></script>

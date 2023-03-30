@@ -241,6 +241,84 @@ body{
   .rate span{
     font-weight: 200;
   }
+  .modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 400px;
+    height: fit-content;
+    background-color: #0d1f35;
+    color: #f5f5f5;
+    border-radius: 15px;
+    display: none;
+  }
+  .close-modal{
+    position: relative;
+    display: flex;
+    align-self: flex-end;
+    justify-content: end;
+  }
+  .btn-modal-close{
+    font-weight: 600;
+    font-size: large;
+    color: #68696a;
+    border: none;
+    background-color: transparent;
+    margin: 10px;
+    cursor: pointer;
+  }
+  .btn-modal-close[disabled]:hover{
+    color: #68696a;
+  }
+  .reverse{
+    flex-direction: row-reverse;
+  }
+  .btn-modal-close:hover{
+
+    color: #f5f5f5;
+  }
+  .modal-content{
+    padding: 20px;
+    height: 100%;
+  }
+  /* form{
+
+  } */
+  form{
+    margin: 20px;
+  }
+  form input{
+    margin: 5px 0px;
+    padding: 10px;
+    height: 3rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .modal-controls{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-btn{
+    padding: 10px 20px;
+  }
+  .modal-inner-loading{
+    display: flex;
+    justify-content:center ;
+    flex-direction: column;
+  }
+  #upload-text{
+    text-align: center;
+  }
+  .formName{
+    font-weight: 800;
+    color: #43b97f;
+  }
 /*
   .Location{
     display: flex;

@@ -1,6 +1,22 @@
 // const btnLeft = document.getElementById("btn-arrowLeft")
 // const btnRight = document.getElementById("btn-arrowRight")
 // const carousel = document.getElementById("image-carousel")
+let elNido = new touristSpot("El Nido", "Asset/Elnido.jpg", "Philippines", "5.0", "5.5k")
+let mountFuji = new touristSpot("Mount Fuji","Asset/mount-fuji.jpg","Japan","4.8","1.2k")
+let twinTower = new touristSpot("Kuala Lumpur", "Asset/Twin-Tower.jpg","Malaysia","4.0","1.6k")
+let marinaBay = new touristSpot("Marina Bay","Asset/Marina-bay.jpg","Singapore","4.6","2.2k")
+let bali = new touristSpot("Bali","Asset/Bali.jpg","Indonesia","5.0","2.5k")
+const touristSpotList = [elNido,mountFuji,twinTower,marinaBay,bali]
+const btnAccept = document.getElementById("btnAccept")
+const btnDecline = document.getElementById("btnDecline")
+const modal = document.getElementById("modal")
+const btnCloseModal = document.getElementById("btn-modal-close")
+const formConsent = document.getElementById("consent-form")
+const modalContent = document.getElementById("modal-content")
+const modalText = document.getElementById("modal-Text")
+const modalControls = document.getElementById("modal-controls")
+let slideItems = document.getElementsByClassName("tourist-spots")
+
 function touristSpot (
   loc_Title,
   loc_Img,
@@ -13,12 +29,8 @@ function touristSpot (
     this.loc_Rate = loc_Rate;
     this.loc_Reviews = loc_Reviews;
 }
-let elNido = new touristSpot("El Nido", "Asset/Elnido.jpg", "Philippines", "5.0", "5.5k")
-let mountFuji = new touristSpot("Mount Fuji","Asset/mount-fuji.jpg","Japan","4.8","1.2k")
-let twinTower = new touristSpot("Kuala Lumpur", "Asset/Twin-Tower.jpg","Malaysia","4.0","1.6k")
-let marinaBay = new touristSpot("Marina Bay","Asset/Marina-bay.jpg","Singapore","4.6","2.2k")
-let bali = new touristSpot("Bali","Asset/Bali.jpg","Indonesia","5.0","2.5k")
-const touristSpotList = [elNido,mountFuji,twinTower,marinaBay,bali]
+
+
 renderTouristSpots()
 
 function renderTouristSpots(){
@@ -46,7 +58,6 @@ function renderTouristSpots(){
 
 
 // const touristSpot = touristSpotList.map(function)
-let slideItems = document.getElementsByClassName("tourist-spots")
 let slideCount = slideItems.length
 let slideIndex = 0;
 function plusSlides(n) {
@@ -69,6 +80,43 @@ function minusSlides(n) {
     }
 }
 
+setTimeout(()=>{
+    modal.style.display = "block" 
+}, 1500)
+
+btnCloseModal.addEventListener("click",function(){
+  btnCloseModal.style.color = "Red"
+  setTimeout(()=>{
+    modal.style.display = "none"
+  }, 100)
+})
+
+formConsent.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    modalText.innerHTML = `<div class="modal-inner-loading">
+    <img src = "Asset/loading.svg" class="loading" width 100%>
+    <p id="upload-text"> Uploading your data to the dark web..</p>
+    </div>
+    `
+    setTimeout(()=>{
+      document.getElementById("upload-text").innerText = "Making the sale"
+    }, 1500)
+
+    const formData = new FormData(formConsent)
+    const formName = formData.get('txtName')
+    const username = formName
+    setTimeout(()=>{
+      btnCloseModal.disabled = false
+      modalContent.innerHTML = `<h1>Thanks <span class="formName">${formName}<span></h1>
+    <p> We just sold your data..</p>
+    `},3000)
+  }
+)
+
+
+btnDecline.onmouseover = ()=>{
+  modalControls.classList.toggle('reverse')
+}
 // function currentSlide(n) {
 //     showSlides(slideIndex = n);
 //   }
